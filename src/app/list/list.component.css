@@ -1,0 +1,2 @@
+.task-list{margin:20px auto;width:40%}
+@media screen and (max-width:768px){.task-list{width:80%}}
