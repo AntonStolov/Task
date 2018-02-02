@@ -28,7 +28,8 @@ export class ListComponent implements OnInit {
             data => {
               this.data = data.results as Planet[];
               this.planets.pushdata(this.data);
-              console.log(this.planets.getdata());           
+              console.log(data.results);
+              this.planets.checkFlag(data.count);                 
             });
     
   }
