@@ -20,14 +20,11 @@ export class SelectorComponent implements OnInit {
         items = (this.planets.getNumberOfPlanets()/items) + 1;
         this.itemsPages = Array.apply(null, {length: items}).map(Number.call, Number);
         console.log(this.itemsPages);
-        
-
     }
-        
   }
 
   ngOnInit() {
-  //setTimeout(() => {this.NumberOfItems(5)}, 3000);
+  setTimeout(() => {this.NumberOfItems(5)}, 3000);
 
   //this.taskService.getData().subscribe(() => this.NumberOfItems(5)) 
   }
