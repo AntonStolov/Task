@@ -15,23 +15,24 @@ import {Subject} from "rxjs/Subject";
 })
 export class ListComponent implements OnInit {
   private Subject = new Subject<string>();
-  data: Planet[];
+  
 
   constructor(private taskService: TaskService, private planets: planets) { }
 
-
-
   ngOnInit() {
     
-    this.taskService.getData()
-        .subscribe(
-            data => {
-              this.data = data.results as Planet[];
-              this.planets.pushdata(this.data);
-              console.log(data.results);
-              this.planets.checkFlag(data.count);                 
-            });
+    // this.taskService.getData()
+    //     .subscribe(
+    //         data => {
+    //           this.data = data.results as Planet[];
+    //           this.planets.pushdata(this.data);
+    //           console.log(data.results);
+    //           this.planets.checkFlag(data.count);                 
+    //         });
+    // this.addPlanetsToData(this.planets.end)
     
   }
+
+  
 
 }

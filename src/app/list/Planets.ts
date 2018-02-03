@@ -5,10 +5,14 @@ import { Injectable } from '@angular/core';
 
     export class planets {
         private data: Planet[] = [];
-        private numberOfPlanets: number;
+        private numberOfPlanets: number = 10;
         private numberOfPlanetsFlag: boolean = false;
         public start: number;
         public end: number;
+
+        getAllData(){            
+            return this.data;
+        }
 
         getdata() {
             return this.data.slice(this.start, this.end);

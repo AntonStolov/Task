@@ -11,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 export class SelectorComponent implements OnInit {
   items: number = 4;
   itemsPages: number[] = [];
+  data: Planet[];
+
   constructor( private planets: planets, private taskService: TaskService ) { }
 
-  NumberOfItems(items){
+  ngOnInit() {
+    setTimeout(() => {this.numberOfItems(5)}, 3000);
+    //this.taskService.getData().subscribe(() => this.numberOfItems(5))
+    this.addPlanetsToData(0);
+    console.log(this.planets.end);
+    
+    }
+
+
+
+
+
+  numberOfItems(items){
     if (items != this.items){
         this.items = items;
         console.log(this.items);
@@ -23,10 +37,64 @@ export class SelectorComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-  setTimeout(() => {this.NumberOfItems(5)}, 3000);
-
-  //this.taskService.getData().subscribe(() => this.NumberOfItems(5)) 
+  numberStart(numberStart){
+    return numberStart*this.items;
   }
+
+  numberEnd(numberEnd){
+    return (numberEnd + 1) * this.items;
+  }
+
+
+
+  addPlanetsToData(number: number){
+    let arrayLength: number = this.planets.getAllData().length;
+    let NumberOfPlanets: number = this.planets.getNumberOfPlanets();
+    console.log("TEST");
+    console.log(this.numberEnd(number));
+    
+    console.log(arrayLength);    
+      if (this.numberEnd(number) >= arrayLength ){
+        
+        
+        let curentChain = arrayLength/(10|0)+1;
+        let lastChain = this.numberEnd(number)/(10|0)+1;
+        console.log(this.numberEnd(number) > arrayLength);
+        // console.log(lastChain >= curentChain);
+        console.log("Last",lastChain, "Curent",curentChain);
+        
+        
+        
+        while (lastChain >= curentChain && curentChain <= (NumberOfPlanets/10|0)+1){
+          // console.log("sravnienie:", arrayLength <= NumberOfPlanets);
+          // console.log("dlina massiva:", arrayLength);
+          // console.log("kol-vo nomierov:", NumberOfPlanets);
+          
+          
+          console.log(curentChain);
+          this.taskService.getData(curentChain)
+          .subscribe(
+              data => {
+                this.data = data.results as Planet[];
+                this.planets.pushdata(this.data);
+                arrayLength = this.planets.getAllData().length;
+                NumberOfPlanets = this.planets.getNumberOfPlanets();
+                console.log(data.results);
+                this.planets.checkFlag(data.count);
+                                 
+              });
+          
+          curentChain++;
+        }
+        
+        
+
+      }
+
+  }
+
+// startAddPlanetToData(){
+//   this.addPlanetsToData(this.numberEnd());
+// }  
   
 }

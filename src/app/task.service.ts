@@ -14,8 +14,8 @@ export class TaskService {
   constructor(private http: Http) { }
 
 
-  getData(): Observable<any> {
-    return this.http.get('https://swapi.co/api/planets/?format=json&page=2')
+  getData(page: number): Observable<any> {
+    return this.http.get('https://swapi.co/api/planets/?format=json&page='+ page)
         .map(response => response.json())
         .catch(error => {
             console.error(error);

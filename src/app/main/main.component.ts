@@ -1,18 +1,23 @@
+import { TaskService } from './../task.service';
 import { planets } from './../list/Planets';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Planet } from "../item/planet";
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnChanges  {
+  [x: string]: any;
   numbers = [];
 
 
 
-  constructor(private route: ActivatedRoute, private planets: planets) { }
+  constructor(private route: ActivatedRoute, 
+              private planets: planets,
+              private taskService: TaskService) { }
 
   ngOnInit() {
     this.route.params.subscribe(parems => {
@@ -23,9 +28,15 @@ export class MainComponent implements OnInit {
     })
   }
 
+  ngOnChanges(){
+    // this.addPlanetsToData(this.planets.end);
+  }
+
   ChangePlanetAnswer(start,end){
     this.planets.start = start;
     this.planets.end = end;    
   }
+
+  
 
 }
