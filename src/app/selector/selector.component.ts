@@ -16,8 +16,7 @@ export class SelectorComponent implements OnInit {
   constructor( private planets: planets, private taskService: TaskService ) { }
 
   ngOnInit() {
-    setTimeout(() => {this.numberOfItems(5)}, 3000);
-    //this.taskService.getData().subscribe(() => this.numberOfItems(5))
+    setTimeout(() => {this.numberOfItems(5)}, 2000);
     this.addPlanetsToData(0);
     console.log(this.planets.end);
     
@@ -57,22 +56,16 @@ export class SelectorComponent implements OnInit {
       if (this.numberEnd(number) >= arrayLength ){
         
         
-        let curentChain = arrayLength/(10|0)+1;
+        let currentChain = arrayLength/(10|0)+1;
         let lastChain = this.numberEnd(number)/(10|0)+1;
         console.log(this.numberEnd(number) > arrayLength);
-        // console.log(lastChain >= curentChain);
-        console.log("Last",lastChain, "Curent",curentChain);
+        console.log("Last",lastChain, "Current",currentChain);
         
         
         
-        while (lastChain >= curentChain && curentChain <= (NumberOfPlanets/10|0)+1){
-          // console.log("sravnienie:", arrayLength <= NumberOfPlanets);
-          // console.log("dlina massiva:", arrayLength);
-          // console.log("kol-vo nomierov:", NumberOfPlanets);
-          
-          
-          console.log(curentChain);
-          this.taskService.getData(curentChain)
+        while (lastChain >= currentChain && currentChain <= (NumberOfPlanets/10|0)+1){              
+          console.log(currentChain);
+          this.taskService.getData(currentChain)
           .subscribe(
               data => {
                 this.data = data.results as Planet[];
@@ -84,7 +77,7 @@ export class SelectorComponent implements OnInit {
                                  
               });
           
-          curentChain++;
+          currentChain++;
         }
         
         
@@ -93,8 +86,5 @@ export class SelectorComponent implements OnInit {
 
   }
 
-// startAddPlanetToData(){
-//   this.addPlanetsToData(this.numberEnd());
-// }  
   
 }
