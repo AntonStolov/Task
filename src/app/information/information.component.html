@@ -1,0 +1,29 @@
+<header>
+  <h1>{{information.name}}</h1>
+</header>
+<section class="task-list">
+  <button class="information-button" (click)="goBack()">
+    <h1>GO BACK</h1>
+  </button>
+  <div class="information-item">
+    <div class="col-1">
+      <p class="info">Rotation period:</p>
+      <p class="info">Orbital period:</p>
+      <p class="info">Diameter:</p>
+      <p class="info">Climate:</p>
+      <p class="info">Gravity:</p>
+      <p class="info">Terrain:</p>
+      <p class="info">Surface water:</p>
+    </div>
+    <div class="col-2">
+      <p class="info">{{information.rotation_period}}</p>
+      <p class="info">{{information.orbital_period}}</p>
+      <p class="info">{{information.diameter}}</p>
+      <p class="info">{{information.climate}}</p>
+      <p class="info">{{information.gravity}}</p>
+      <p class="info">{{information.terrain}}</p>
+      <p class="info">{{information.surface_water}}</p>
+    </div>
+  </div>
+</section>
+

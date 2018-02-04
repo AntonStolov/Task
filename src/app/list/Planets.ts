@@ -9,6 +9,7 @@ import { Injectable } from '@angular/core';
         private numberOfPlanetsFlag: boolean = false;
         public start: number;
         public end: number;
+        public input: string;
 
         getAllData(){            
             return this.data;
@@ -31,6 +32,10 @@ import { Injectable } from '@angular/core';
 
         getNumberOfPlanets(){
             return this.numberOfPlanets;
+        }
+
+        plenetForInformation(indexForInformation: number){
+            return this.data[indexForInformation];
         }
 
     }

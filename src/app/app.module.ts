@@ -13,6 +13,8 @@ import { HttpModule } from '@angular/http';
 import { SearchComponent } from './search/search.component';
 import { SelectorComponent } from './selector/selector.component';
 import { MainComponent } from './main/main.component';
+import { PlanetfilterPipe } from './planetfilter.pipe';
+import { InformationComponent } from './information/information.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { MainComponent } from './main/main.component';
     ItemComponent,
     SearchComponent,
     SelectorComponent,
-    MainComponent
+    MainComponent,
+    PlanetfilterPipe,
+    InformationComponent
   ],
   imports: [
     BrowserModule,

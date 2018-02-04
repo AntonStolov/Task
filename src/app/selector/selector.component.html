@@ -1,9 +1,11 @@
-<div>
-  <button (click)="numberOfItems(5)">5</button>
-  <button (click)="numberOfItems(10)">10</button>
-  <button (click)="numberOfItems(50)">50</button>
-  <button (click)="numberOfItems(100)">100</button>
+<div class="button-loc">
+  <h3>number of planets on one page</h3>
+  <button class="selection-button" (click)="numberOfItems(5)">5</button>
+  <button class="selection-button" (click)="numberOfItems(10)">10</button>
+  <button class="selection-button" (click)="numberOfItems(50)">50</button>
+  <button class="selection-button" (click)="numberOfItems(100)">100</button>
 </div>
-<div>
-  <button *ngFor="let page of itemsPages" routerLink="/{{numberStart(page)}}+{{numberEnd(page)}}" (click)="addPlanetsToData(page)">{{page + 1}}</button>
+<div class="button-loc">
+  <h3>pages</h3>
+  <button class= "button-loc navigation-button" *ngFor="let page of itemsPages" routerLink="/{{numberStart(page)}}+{{numberEnd(page)}}" (click)="addPlanetsToData(page)">{{page + 1}}</button>
 </div>

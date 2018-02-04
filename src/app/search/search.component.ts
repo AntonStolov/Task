@@ -1,4 +1,5 @@
-import { Subject } from 'rxjs/Subject';
+import { planets } from './../list/Planets';
+  import { Subject } from 'rxjs/Subject';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  private stream = new Subject<string>();
-  constructor() { }
+  public stream = new Subject<string>();
+  constructor(private planets:planets) { }
   s
   searchThisString(input: string){
     this.stream.next(input);
@@ -20,7 +21,7 @@ export class SearchComponent implements OnInit {
     this.stream
         .subscribe(data => {
           console.log(data);
-          
+          this.planets.input = data;     
         })
   }
 

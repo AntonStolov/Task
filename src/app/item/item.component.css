@@ -1,1 +1,10 @@
-.task-item{box-shadow:1px 1px 6px #ccc;padding:10px;margin:10px 0;text-align:center}
+.task-item{
+    width: 100%;
+    /* box-shadow:1px 1px 6px;  */
+    background-color: #FDF7F7;
+    padding:10px;margin:10px 0;
+    text-align:center; 
+    border: 2px solid rgba(52, 152, 219, 0.40);
+}
+
+/* .task-item{width: 100%;box-shadow:1px 1px 6px; background-color: #FDF7F7;padding:10px;margin:10px 0;text-align:center} */

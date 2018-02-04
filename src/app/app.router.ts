@@ -1,3 +1,4 @@
+import { InformationComponent } from './information/information.component';
 import { MainComponent } from './main/main.component';
 import { ListComponent } from './list/list.component';
 import { NgModule } from '@angular/core';
@@ -15,7 +16,7 @@ const appRoutes: Routes = [
     },
     {
         path: ":planets/:num",
-        component: ListComponent,
+        component: InformationComponent,
     }
     
 ]
