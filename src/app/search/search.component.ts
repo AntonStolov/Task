@@ -1,6 +1,6 @@
-import { planets } from './../list/Planets';
-  import { Subject } from 'rxjs/Subject';
-import { Component, OnInit } from '@angular/core';
+import {PlanetsService} from '../planets.service';
+import {Subject} from 'rxjs/Subject';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -9,20 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
   public stream = new Subject<string>();
-  constructor(private planets:planets) { }
-  s
-  searchThisString(input: string){
-    this.stream.next(input);
+
+  constructor(private planets: PlanetsService) {
   }
-
-
 
   ngOnInit() {
     this.stream
-        .subscribe(data => {
-          console.log(data);
-          this.planets.input = data;     
-        })
+      .subscribe(data => {
+        console.log(data);
+        this.planets.input = data;
+      });
   }
 
+  searchThisString(input: string) {
+    this.stream.next(input);
+  }
 }

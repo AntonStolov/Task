@@ -1,31 +1,26 @@
-import { AppRoutingModule } from './app.router';
-import { planets } from './list/Planets';
-// import { planets } from './list/planets';
-import { TaskService } from './task.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {AppRoutingModule} from './app.router';
+import {PlanetsService} from './planets.service';
+import {TaskService} from './task.service';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-
-import { AppComponent } from './app.component';
-import { ListComponent } from './list/list.component';
-import { ItemComponent } from './item/item.component';
-import { HttpModule } from '@angular/http';
-import { SearchComponent } from './search/search.component';
-import { SelectorComponent } from './selector/selector.component';
-import { MainComponent } from './main/main.component';
-import { PlanetfilterPipe } from './planetfilter.pipe';
-import { InformationComponent } from './information/information.component';
-
+import {AppComponent} from './app.component';
+import {ListComponent} from './list/list.component';
+import {HttpModule} from '@angular/http';
+import {SearchComponent} from './search/search.component';
+import {SelectorComponent} from './selector/selector.component';
+import {MainComponent} from './main/main.component';
+import {PlanetFilterPipe} from './planetfilter.pipe';
+import {InformationComponent} from './information/information.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    ItemComponent,
     SearchComponent,
     SelectorComponent,
     MainComponent,
-    PlanetfilterPipe,
+    PlanetFilterPipe,
     InformationComponent
   ],
   imports: [
@@ -33,7 +28,8 @@ import { InformationComponent } from './information/information.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [TaskService, planets],
+  providers: [TaskService, PlanetsService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

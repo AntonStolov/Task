@@ -6,24 +6,46 @@
     <h1>GO BACK</h1>
   </button>
   <div class="information-item">
-    <div class="col-1">
-      <p class="info">Rotation period:</p>
-      <p class="info">Orbital period:</p>
-      <p class="info">Diameter:</p>
-      <p class="info">Climate:</p>
-      <p class="info">Gravity:</p>
-      <p class="info">Terrain:</p>
-      <p class="info">Surface water:</p>
-    </div>
-    <div class="col-2">
-      <p class="info">{{information.rotation_period}}</p>
-      <p class="info">{{information.orbital_period}}</p>
-      <p class="info">{{information.diameter}}</p>
-      <p class="info">{{information.climate}}</p>
-      <p class="info">{{information.gravity}}</p>
-      <p class="info">{{information.terrain}}</p>
-      <p class="info">{{information.surface_water}}</p>
-    </div>
+    <table class="info">
+      <tr>
+        <td >Rotation period:</td>
+        <td>{{information.rotation_period}}</td>
+
+      </tr>
+      <tr>
+        <td>Orbital period:</td>
+        <td>{{information.orbital_period}}</td>
+      </tr>
+      <tr>
+        <td>Diameter:</td>
+        <td>{{information.diameter}}</td>
+      </tr>
+      <tr>
+        <td>Climate:</td>
+        <td>{{information.climate}}</td>
+      </tr>
+      <tr>
+        <td>Gravity:</td>
+        <td>{{information.gravity}}</td>
+      </tr>
+      <tr>
+        <td>Terrain:</td>
+        <td>{{information.terrain}}</td>
+      </tr>
+      <tr>
+        <td>Surface water:</td>
+        <td>{{information.surface_water}}</td>
+      </tr>
+      <tr>
+    </table>
+
+    <!--<div class="col-1">-->
+      <!--<p class="info">Surface water:</p>-->
+    <!--</div>-->
+    <!--<div class="col-2">-->
+      <!--<p class="info">{{information.terrain}}</p>-->
+      <!--<p class="info">{{information.surface_water}}</p>-->
+    <!--</div>-->
   </div>
 </section>
 

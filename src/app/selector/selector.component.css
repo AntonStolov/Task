@@ -1,39 +1,39 @@
-.button-loc {   
-                text-align: center;
-                margin:20px auto;
-                width:40%}
-                @media screen and (max-width:768px){.button-loc{width:80%}
+.button-loc {
+  text-align: center;
+  margin: 20px auto;
+  width: 40%
 }
 
+@media screen and (max-width: 768px) {
+  .button-loc {
+    width: 80%
+  }
+}
 
-
-.button-loc  button{ 
-                        border-radius: 10%; 
-                        width: 50px;
-                        background-color: rgba(232, 139, 13, 0.78); /* Green */
-                        border: none;
-                        color: white;
-                        padding: 10px;
-                        text-align: center;
-                        margin: 4px 5px;
-                    }       
-
-
+.button-loc button {
+  border-radius: 10%;
+  width: 50px;
+  background-color: rgba(232, 139, 13, 0.78); /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin: 4px 5px;
+}
 
 .button-loc .navigation-button {
-                                    /* border-radius: 10%;   */
-                                    width: 25px;
-                                    background-color: #4CAF50; /* Green */
-                                    border: none;
-                                    color: white;
-                                    padding: 5px;
-                                    text-align: center;
-                                    margin: 4px 5px;
-                                }
+  width: 25px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  margin: 4px 5px;
+}
 
 h3 {
-    color: gray;
-    font-style: italic;
+  color: gray;
+  font-style: italic;
 }
 
 

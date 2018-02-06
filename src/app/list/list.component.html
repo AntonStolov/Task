@@ -1,3 +1,6 @@
 <section class="task-list">
-  <app-item></app-item>
+  <button class="task-item" routerLink="/planet/{{planet.name.replace(' ','')}}"
+          *ngFor="let planet of actualPlanets() | planetfilter: inputForFilter()">
+    <h1>{{planet.name}}</h1>
+  </button>
 </section>

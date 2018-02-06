@@ -7,5 +7,9 @@
 </div>
 <div class="button-loc">
   <h3>pages</h3>
-  <button class= "button-loc navigation-button" *ngFor="let page of itemsPages" routerLink="/{{numberStart(page)}}+{{numberEnd(page)}}" (click)="addPlanetsToData(page)">{{page + 1}}</button>
+  <button class="button-loc navigation-button"
+          *ngFor="let page of itemsPages"
+          routerLink="/{{numberStart(page)}}+{{numberEnd(page)}}"
+          (click)="addPlanetsToData(page)">{{page + 1}}
+  </button>
 </div>
