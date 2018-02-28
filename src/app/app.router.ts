@@ -1,6 +1,5 @@
 import {InformationComponent} from './information/information.component';
 import {MainComponent} from './main/main.component';
-import {ListComponent} from './list/list.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 

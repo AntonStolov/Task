@@ -23,7 +23,6 @@ export class SearchComponent implements OnInit {
     this.stream
       .debounceTime(500)
         .subscribe(data => {
-          console.log(data);
           this.planets.input = data;
           this.filter.DataFromFilter(data);
         });

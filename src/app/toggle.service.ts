@@ -8,7 +8,6 @@ export class ToggleService {
   }
 
   toggleButton(showItem) {
-    console.log(showItem)
     if (!showItem) {
       this.selector.itemsPages.forEach((item) => {
         item.activ = false;
@@ -20,7 +19,6 @@ export class ToggleService {
   }
 
   toggleSwitch(showItem) {
-    console.log(showItem)
     if (!showItem) {
       this.selector.switchItemsOnPage.forEach((item) => {
         item.activ = false;

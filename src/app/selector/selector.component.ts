@@ -18,13 +18,13 @@ export class SelectorComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.numberOfItems(this.planets.end - this.planets.start);
+    // this.numberOfItems(this.planets.end - this.planets.start);
   }
 
   onClick(item) {
     this.selector.getNumberOfItems(item.number);
-    return this.toggle.toggleSwitch(item.activ);
     this.planetOnThePageh3Title();
+    return this.toggle.toggleSwitch(item.activ);
   }
 
   planetOnThePageh3Title() {

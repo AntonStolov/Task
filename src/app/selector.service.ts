@@ -24,7 +24,6 @@ export class SelectorService {
       this.itemsPages = Array.apply(null, {length: items}).map((x, number) => {
         return {number: number, activ: false};
       });
-      console.log(this.itemsPages);
     }
   }
 
@@ -36,4 +35,11 @@ export class SelectorService {
   numberEnd(numberEnd) {
     return (numberEnd + 1) * this.items;
   }
+
+  initNamberOfItems(count) {
+    this.planets.changeNumberOfPlanets(count);
+    this.getNumberOfItems(this.planets.end - this.planets.start);
+    this.itemsPages[0].activ = true;
+  }
+
 }

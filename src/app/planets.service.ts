@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class PlanetsService {
   private data: Planet[] = [];
-  private numberOfPlanets: number = 61;
+  private numberOfPlanets: number;
   public PlanetsFlag: boolean = true;
   public start: number;
   public end: number;
@@ -35,6 +35,10 @@ export class PlanetsService {
 
   getNumberOfPlanets() {
     return this.numberOfPlanets;
+  }
+
+  changeNumberOfPlanets(number) {
+    this.numberOfPlanets = number;
   }
 
   planetForInformation(indexForInformation: number) {

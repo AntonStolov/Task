@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {PlanetsService} from '../planets.service';
 import {SelectorService} from '../selector.service';
 import {ToggleService} from '../toggle.service';
 
@@ -11,18 +10,11 @@ import {ToggleService} from '../toggle.service';
 export class NavigationComponent implements OnInit {
   h3Title: string = 'pages';
 
-  constructor(private planets: PlanetsService, private selector: SelectorService,
+  constructor(private selector: SelectorService,
               private toggle: ToggleService) {
   }
 
-  ngOnInit() {
-    this.numberOfItems(this.planets.end - this.planets.start);
-  }
-
-  numberOfItems(items) {
-    this.selector.getNumberOfItems(items);
-    this.selector.itemsPages[0].activ = true;
-  }
+  ngOnInit() {}
 
   itemsPages() {
     return this.selector.itemsPages;
