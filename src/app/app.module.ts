@@ -12,6 +12,10 @@ import {SelectorComponent} from './selector/selector.component';
 import {MainComponent} from './main/main.component';
 import {PlanetFilterPipe} from './planetfilter.pipe';
 import {InformationComponent} from './information/information.component';
+import {FilterService} from './filter.service';
+import {SelectorService} from './selector.service';
+import { NavigationComponent } from './navigation/navigation.component';
+import {ToggleService} from './toggle.service';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,15 @@ import {InformationComponent} from './information/information.component';
     SelectorComponent,
     MainComponent,
     PlanetFilterPipe,
-    InformationComponent
+    InformationComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     AppRoutingModule
   ],
-  providers: [TaskService, PlanetsService],
+  providers: [TaskService, PlanetsService, FilterService, SelectorService, ToggleService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

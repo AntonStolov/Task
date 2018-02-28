@@ -1,6 +1,7 @@
-import {PlanetsService} from '../planets.service';
-import {TaskService} from './../task.service';
-import {Component} from '@angular/core';
+import { PlanetsService } from '../planets.service';
+import { TaskService } from './../task.service';
+import { Component, Input } from '@angular/core';
+import {FilterService} from "../filter.service";
 
 @Component({
   selector: 'app-list',
@@ -8,12 +9,21 @@ import {Component} from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-  constructor(private taskService: TaskService,
-              private planets: PlanetsService) {
+
+  @Input()
+  displayedPlanets: Array<any> = [];
+
+  constructor(private planets: PlanetsService,
+              private filter: FilterService) {
   }
 
   actualPlanets() {
-    return this.planets.getData();
+    if (this.planets.input) {
+      return this.filter.result;
+    }
+    else {
+      return this.planets.getData();
+    }
   }
 
   inputForFilter() {

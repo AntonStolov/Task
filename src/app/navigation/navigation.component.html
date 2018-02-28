@@ -1,0 +1,10 @@
+<div class="button-loc">
+  <h3>pages</h3>
+  <button class="button-loc navigation-button"
+          *ngFor="let page of itemsPages()"
+          [ngStyle]="{'background-color': display(page.activ)}"
+          (click)="page.activ = onClick(page.activ)"
+          routerLink="/{{numberStart(page.number)}}+{{numberEnd(page.number)}}"
+  >{{page.number + 1}}
+  </button>
+</div>

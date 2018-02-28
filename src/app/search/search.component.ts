@@ -1,6 +1,8 @@
-import {PlanetsService} from '../planets.service';
-import {Subject} from 'rxjs/Subject';
-import {Component, OnInit} from '@angular/core';
+import { PlanetsService } from '../planets.service';
+import { Subject } from 'rxjs/Subject';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Planet } from '../item/planet';
+import {FilterService} from '../filter.service';
 
 @Component({
   selector: 'app-search',
@@ -8,20 +10,27 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+
+  @Output()
+  filteredChanged: EventEmitter<string> = new EventEmitter();
+
   public stream = new Subject<string>();
 
-  constructor(private planets: PlanetsService) {
+  constructor(private planets: PlanetsService, private filter: FilterService) {
   }
 
   ngOnInit() {
     this.stream
-      .subscribe(data => {
-        console.log(data);
-        this.planets.input = data;
-      });
+      .debounceTime(500)
+        .subscribe(data => {
+          console.log(data);
+          this.planets.input = data;
+          this.filter.DataFromFilter(data);
+        });
   }
 
-  searchThisString(input: string) {
+  filterPlanets(input: string) {
+    // this.planets.getData()
     this.stream.next(input);
   }
 }
