@@ -1,7 +1,7 @@
-import { PlanetsService } from './planets.service';
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import {PlanetsService} from './planets.service';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 @Injectable()
@@ -52,20 +52,21 @@ export class TaskService {
     ];
 
     return this.http.get(firstPage).map((data: any) => {
-      return data.json().results; })
-               .zip(urls[0], urls[1], urls[2], urls[3], urls[4], urls[5]);
+      return data.json().results;
+    })
+      .zip(urls[0], urls[1], urls[2], urls[3], urls[4], urls[5]);
   }
 
   getData(page: number): Observable<any> {
     return this.http
-               .get('https://swapi.co/api/planets/?format=json&page=' + page)
-               .map((data: any) => {
-                 return data.json();
-               })
-               .catch(error => {
-                 console.error(error);
-                 return Observable.throw(error.json());
-               });
+      .get('https://swapi.co/api/planets/?format=json&page=' + page)
+      .map((data: any) => {
+        return data.json();
+      })
+      .catch(error => {
+        console.error(error);
+        return Observable.throw(error.json());
+      });
 
   }
 }

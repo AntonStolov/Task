@@ -30,7 +30,6 @@ export class SearchComponent implements OnInit {
   }
 
   filterPlanets(input: string) {
-    // this.planets.getData()
     this.stream.next(input);
   }
 }

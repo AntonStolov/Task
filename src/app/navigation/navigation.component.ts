@@ -9,6 +9,7 @@ import {ToggleService} from '../toggle.service';
   styleUrls: ['../selector/selector.component.css']
 })
 export class NavigationComponent implements OnInit {
+  h3Title: string = 'pages';
 
   constructor(private planets: PlanetsService, private selector: SelectorService,
               private toggle: ToggleService) {

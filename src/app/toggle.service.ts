@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {SelectorService} from './selector.service';
 
 @Injectable()
 export class ToggleService {
 
-  constructor(private selector: SelectorService) { }
+  constructor(private selector: SelectorService) {
+  }
 
   toggleButton(showItem) {
     console.log(showItem)
@@ -13,8 +14,7 @@ export class ToggleService {
         item.activ = false;
       });
       return true;
-    }
-    else {
+    } else {
       return true;
     }
   }
@@ -26,8 +26,7 @@ export class ToggleService {
         item.activ = false;
       });
       return true;
-    }
-    else {
+    } else {
       return true;
     }
   }

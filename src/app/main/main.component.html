@@ -1,14 +1,8 @@
 <header>
-  <h1>List of planets </h1>
-  <app-search>
-    <!--(filteredChanged)=changePlanetListAfterFilterChange(planetNames)>-->
-
-  </app-search>
+  <h1>{{h1Title}}</h1>
+  <app-search></app-search>
 </header>
-<app-list>
-  <!--[planetsToDisplay]="displayedPlanets"-->
-
-</app-list>
+<app-list></app-list>
 <app-selector></app-selector>
 <app-navigation></app-navigation>
 <router-outlet></router-outlet>

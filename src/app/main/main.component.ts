@@ -1,7 +1,6 @@
 import { PlanetsService } from '../planets.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Planet } from '../item/planet';
 import { TaskService } from '../task.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { TaskService } from '../task.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  // [x: string]: any;
+  h1Title = 'List of planets'
   numbers: Array<number> = [];
 
   constructor(private route: ActivatedRoute,
@@ -47,8 +46,4 @@ export class MainComponent implements OnInit {
     this.planets.start = start;
     this.planets.end = end;
   }
-
-  // changePlanetListAfterFilterChange(planetNames): void {
-  //   this.displayedPlanets = planetNames;
-  // }
 }

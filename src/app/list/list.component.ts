@@ -1,7 +1,6 @@
 import { PlanetsService } from '../planets.service';
-import { TaskService } from './../task.service';
 import { Component, Input } from '@angular/core';
-import {FilterService} from "../filter.service";
+import {FilterService} from '../filter.service';
 
 @Component({
   selector: 'app-list',
@@ -10,9 +9,6 @@ import {FilterService} from "../filter.service";
 })
 export class ListComponent {
 
-  @Input()
-  displayedPlanets: Array<any> = [];
-
   constructor(private planets: PlanetsService,
               private filter: FilterService) {
   }
@@ -20,14 +16,8 @@ export class ListComponent {
   actualPlanets() {
     if (this.planets.input) {
       return this.filter.result;
-    }
-    else {
+    } else {
       return this.planets.getData();
     }
   }
-
-  inputForFilter() {
-    return this.planets.input;
-  }
-
 }
