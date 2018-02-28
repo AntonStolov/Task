@@ -24,7 +24,6 @@ export class SelectorService {
       this.itemsPages = Array.apply(null, {length: items}).map((x, number) => {
         return {number: number, activ: false};
       });
-      this.itemsPages[0].activ = true;
       console.log(this.itemsPages);
     }
   }

@@ -1,5 +1,5 @@
-import { PlanetsService } from '../planets.service';
-import { Component, OnInit } from '@angular/core';
+import {PlanetsService} from '../planets.service';
+import {Component, OnInit} from '@angular/core';
 import {SelectorService} from '../selector.service';
 import {ToggleService} from '../toggle.service';
 
@@ -24,6 +24,11 @@ export class SelectorComponent implements OnInit {
   onClick(item) {
     this.selector.getNumberOfItems(item.number);
     return this.toggle.toggleSwitch(item.activ);
+    this.planetOnThePageh3Title();
+  }
+
+  planetOnThePageh3Title() {
+    return this.planets.planetsOnThePage() + ' planets on one page';
   }
 
   numberOfItems(items) {

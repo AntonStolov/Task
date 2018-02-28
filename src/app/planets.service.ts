@@ -21,6 +21,14 @@ export class PlanetsService {
       return this.data.slice(this.start, this.end);
   }
 
+  planetsOnThePage() {
+    if (this.end > this.numberOfPlanets) {
+      return this.numberOfPlanets - this.start;
+    } else {
+      return this.end - this.start;
+    }
+  }
+
   pushData(data: Planet[]) {
     this.data = data;
   }

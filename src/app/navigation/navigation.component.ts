@@ -20,7 +20,8 @@ export class NavigationComponent implements OnInit {
   }
 
   numberOfItems(items) {
-    this.selector.getNumberOfItems(items)
+    this.selector.getNumberOfItems(items);
+    this.selector.itemsPages[0].activ = true;
   }
 
   itemsPages() {
