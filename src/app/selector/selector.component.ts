@@ -18,7 +18,6 @@ export class SelectorComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.numberOfItems(this.planets.end - this.planets.start);
   }
 
   onClick(item) {
@@ -29,10 +28,6 @@ export class SelectorComponent implements OnInit {
 
   planetOnThePageh3Title() {
     return this.planets.planetsOnThePage() + ' planets on one page';
-  }
-
-  numberOfItems(items) {
-    this.selector.getNumberOfItems(items);
   }
 
   itemsOnPage() {
